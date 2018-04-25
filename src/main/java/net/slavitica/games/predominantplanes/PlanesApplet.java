@@ -22,10 +22,6 @@ public class PlanesApplet extends PApplet {
         SceneManager.Switch(new MenuScene(this));
     }
     
-    public void setup() {
-        this.background(0);
-    }
-    
     public void draw() {
         SceneManager.Draw();
     }

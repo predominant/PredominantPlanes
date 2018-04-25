@@ -6,28 +6,22 @@
 package net.slavitica.games.predominantplanes.scene;
 
 import processing.core.PApplet;
-import processing.core.PImage;
 
 /**
  *
  * @author graham.weldon
  */
-public class MenuScene extends Scene {
-    PImage image = this.scene.loadImage("images/sunset.jpg");
+public class SecondScene extends Scene {
     
-    public MenuScene(PApplet p) {
+    public SecondScene(PApplet p) {
         super(p);
     }
-    
+
     @Override
     public void Draw() {
-        this.scene.textSize(32);
-        this.scene.background(0);
-        this.scene.image(this.image, 0, 0);
-        this.scene.text("Menu Scene", 50, 50);
-        
+        this.scene.background(120,0,255, 255);
         if (this.scene.keyPressed) {
-            SceneManager.Switch(new SecondScene(this.scene));
+            SceneManager.Switch(new MenuScene(this.scene));
         }
     }
 }
