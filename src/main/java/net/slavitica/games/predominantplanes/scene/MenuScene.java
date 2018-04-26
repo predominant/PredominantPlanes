@@ -21,13 +21,15 @@ public class MenuScene extends Scene {
     
     @Override
     public void Draw() {
-        this.scene.textSize(32);
         this.scene.background(0);
         this.scene.image(this.image, 0, 0);
+        this.scene.textSize(32);
         this.scene.text("Menu Scene", 50, 50);
-        
-        if (this.scene.keyPressed) {
-            SceneManager.Switch(new SecondScene(this.scene));
-        }
+    }
+    
+    @Override
+    public void KeyReleased() {
+        if (this.scene.key == ' ')
+            SceneManager.Switch("Second");
     }
 }

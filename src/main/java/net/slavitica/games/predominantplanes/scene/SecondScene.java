@@ -20,8 +20,11 @@ public class SecondScene extends Scene {
     @Override
     public void Draw() {
         this.scene.background(120,0,255, 255);
-        if (this.scene.keyPressed) {
-            SceneManager.Switch(new MenuScene(this.scene));
-        }
+        this.scene.text("Second Scene", 50, 50);
+    }
+
+    @Override
+    public void KeyReleased() {
+        SceneManager.Switch("Menu");
     }
 }

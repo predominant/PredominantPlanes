@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package net.slavitica.games.predominantplanes;
+
 import net.slavitica.games.predominantplanes.scene.MenuScene;
 import net.slavitica.games.predominantplanes.scene.SceneManager;
+import net.slavitica.games.predominantplanes.scene.SecondScene;
 import processing.core.PApplet;
 /**
  *
@@ -17,12 +19,23 @@ public class PlanesApplet extends PApplet {
     }
     
     public void settings() {
-        int w = 1280;
+        SceneManager.Init(this);
+        SceneManager.AddScene(new MenuScene(this), "Menu");
+        SceneManager.AddScene(new SecondScene(this), "Second");
+                
+        int w = 640;
         this.size(w, w / 16 * 9);
-        SceneManager.Switch(new MenuScene(this));
+        SceneManager.Switch("Menu");
     }
     
     public void draw() {
         SceneManager.Draw();
+    }
+    
+    public void keyPressed() {
+        SceneManager.KeyPressed();
+    }
+    public void keyReleased() {
+        SceneManager.KeyReleased();
     }
 }

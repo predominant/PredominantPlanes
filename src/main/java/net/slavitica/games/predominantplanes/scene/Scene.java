@@ -30,4 +30,9 @@ public abstract class Scene {
     
     public void Draw() {
     }
+    
+    public void KeyPressed() {
+    }
+    public void KeyReleased() {
+    }
 }
